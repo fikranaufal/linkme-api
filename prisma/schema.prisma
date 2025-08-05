@@ -24,3 +24,13 @@ model User {
 
   @@map("users")
 }
+
+model Link {
+  id        String    @id @default(uuid())
+  title     String 
+  url       String
+  createdAt DateTime  @default(now()) @map("created_at")
+  updateAt  DateTime  @updatedAt @map("updated_at")
+
+  @@map("links")
+}
